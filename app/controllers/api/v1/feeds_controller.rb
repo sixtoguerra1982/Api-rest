@@ -7,8 +7,8 @@ module Api
       end
 
       def show
-        article = Feed.find(params[:id])
-        render json: {status: 'SUCCESS', message:'Loaded Feed', data:article},status: :ok
+        feed = Feed.find(params[:id])
+        render json: {status: 'SUCCESS', message:'Loaded Feed', data:feed},status: :ok
       end
     end
   end
