@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-Feed.create({
-      date_feed: Time.now,
-      title: "hola",
-      image: "hola",
-      content: "hola_c",
-      all_content: "all_content",
-      category: "hoy"
-  })  
+10.times do |i|
+  Feed.create({
+        date_feed: Time.now,
+        title: "#{i} hola #{i}",
+        image: "hola #{i} ",
+        content: "hola_c",
+        all_content: "all_content",
+        category: "hoy"
+    })
+end

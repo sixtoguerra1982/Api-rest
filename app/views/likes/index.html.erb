@@ -1,0 +1,28 @@
+<h1>Likes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>user_id</th>
+      <th>feed</th>
+      <th>Like</th>
+      <th>JSON</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @likes.each do |like| %>
+      <tr>
+        <td><%= like.id %></td>
+        <td><%= like.user_id %></td>
+        <td><%= like.feed_id %></td>
+        <td><%= like.like %></td>
+        <td><%= link_to 'Json(' + like.id.to_s + ')', api_v1_like_path(like) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'ROOT', root_path %>

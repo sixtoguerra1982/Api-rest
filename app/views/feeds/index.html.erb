@@ -1,0 +1,35 @@
+
+<h1>Feeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>date_feed</th>
+      <th>title</th>
+      <th>image</th>
+      <th>content</th>
+      <th>all_content</th>
+      <th>Category</th>
+      <th>JSON</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+        <td><%= feed.id %></td>
+        <td><%= feed.date_feed %></td>
+        <td><%= feed.title[0,20] %></td>
+        <td><%= image_tag(feed.image,size:"64x64") if feed.image.present? %></td>
+        <td><%= feed.content[0,20] %></td>
+        <td><%= feed.all_content[0,20] %></td>
+        <td><%= feed.category[0,20] %></td>
+        <td><%= link_to 'Json(' + feed.id.to_s + ')', api_v1_feed_path(feed) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'ROOT', root_path %>

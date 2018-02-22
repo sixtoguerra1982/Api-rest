@@ -1,0 +1,52 @@
+
+<h1>Api ROOT</h1>
+
+<div>
+  <p>Total de Feeds: <strong><%= Feed.all.size %></strong>
+    <%= link_to "Listar Feeds JSON", api_v1_feeds_path %>
+    <%= link_to "Listar Feeds HTML", feeds_index_path %>
+  </p>
+</div>
+
+<br>
+<div>
+  <p>Total de Comentarios: <strong><%= Comment.all.size %></strong>
+    <%= link_to "Listar Comentarios JSON", api_v1_comments_path %>
+    <%= link_to "Listar Comentarios HTML", comments_index_path %>
+  </p>
+  <p>New <span>Enviar Post Url : http://localhost:3000/api/v1/comments </span>
+    ->
+    {
+  	"feed_id":"integer",
+  	"user_id":"integer",
+  	"content":"text"
+    }
+  </p>
+</div>
+
+<br>
+<div>
+  <p>Total de Likes : <strong><%= Like.all.size %></strong>
+    <%= link_to "Listar Me Gusta JSON", api_v1_likes_path %>
+    <%= link_to "Listar Me Gusta HTML", likes_index_path %>
+  </p>
+  <p>New <span>Enviar Post Url : http://localhost:3000/api/v1/likes </span>
+    ->
+    {
+	  "feed_id":"integer",
+	  "user_id":"integer",
+	  "like":"boolean"
+    }
+  </p>
+</div>
+
+
+<br>
+<div>
+
+  <p>Parse File Items</p>
+  <form action="/feeds" method="post">
+    <input type="url" name="feed[url]" placeholder="URL" value="https://www.teleton.cl/feed/?json">
+    <input type="submit" name="commit" value="enviar">
+  </form>
+</div>
